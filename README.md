@@ -2,7 +2,7 @@
 
 It mainly converts the ppm signal of Sky 9 into pwm signal and controls the wing. The operation idea mainly uses from ![扑翼机控制](./data/image.png)
 
-## stc8g gpio
+## stc8g1k08a gpio
 
 ```c
 gpio_init(3, 2, GPIO_PullUp); // PPM input
