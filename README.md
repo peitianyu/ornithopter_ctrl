@@ -1,24 +1,19 @@
-## stc系列编译烧录模板
+# Simple stc flutter controller
 
-### 安装工具
+It mainly converts the ppm signal of Sky 9 into pwm signal and controls the wing. The operation idea mainly uses from ![扑翼机控制](./data/image.png)
+
+## stc8g gpio
+
+```c
+gpio_init(3, 2, GPIO_PullUp); // PPM input
+gpio_init(3, 3, GPIO_OUT_PP); // PWM0
+gpio_init(5, 5, GPIO_OUT_PP); // PWM1
 ```
+
+## build&install
+
+```shell
 sudo apt install -y cppcheck sdcc cmake
-
-# 烧录使用stc8prog, 详细可以参考:
-# https://github.com/IOsetting/stc8prog.git
-```
-
-### 编译并烧录
-
-```
+# Modify "/dev/ttyS3", I'm using wsl1, so just change the port number.
 ./rebuild.sh
-```
-
-### 串口工具 
-
-```
-sudo apt install cutecom 
-
-# 使用
-cutecom
 ```
